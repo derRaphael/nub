@@ -1,0 +1,49 @@
+{
+    "(_NUB_CLASS_) main_nub": {
+        "(_NUB_CLASS_EXTENDS_)": "\\nub\\core\\nub",
+        "(_NUB_CLASS_METHOD_) __init": [
+            {
+                "(_NUB_CLASS_PROPERTY_) math_operation1": {
+                    "___definition": {
+                        "___class": "\\nub\\math\\basic\\operations\\subtraction",
+                        "___init": []
+                    }
+                }
+            },
+            {
+                "(_NUB_CLASS_PROPERTY_) math_operation1": {
+                    "(_NUB_APPLY_METHOD_) __set_minuend": [
+                        {
+                            "___definition": {
+                                "___class": "\\nub\\types\\number",
+                                "___init": 5
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "(_NUB_CLASS_PROPERTY_) math_operation1": {
+                    "(_NUB_APPLY_METHOD_) __set_subtrahend": [
+                        {
+                            "___definition": {
+                                "___class": "\\nub\\types\\number",
+                                "___init": 5
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "(_NUB_CLASS_METHOD_) __compute":{
+            "(_NUB_CLASS_PROPERTY_) math_operation1": {
+                "(_NUB_APPLY_METHOD_) __compute": []
+            },
+            "(_NUB_CLASS_PROPERTY_) math_operation1_value": {
+                "(_NUB_CLASS_PROPERTY_) math_operation1": {
+                    "(_NUB_APPLY_METHOD_) __value": []
+                }
+            }
+        }
+    }
+}

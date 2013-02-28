@@ -8,6 +8,10 @@ At present only a sample browser, and some very basic tests are included.
 Testing:
 --------
 
+Just testing the UI mockup, have a peek at http://jsfiddle.net/JprP4/embedded/result/
+
+For the wicked:
+
 To run the browser, you'll need pywebkitgtk (in ubuntu speak that's python-ubuntu), and fire up the php build in webserver.
 The webserver must be started in the projects ui folder and the python-webkit script must point to started server on localhost.
 
