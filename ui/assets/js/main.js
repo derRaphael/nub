@@ -1,76 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Playground</title>
-    <style type="text/css" media="screen">
-        body {
-            background: #222;
-            color: #fff;
-            font: 300 100.1% "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
-        }
-        #holder {
-            position: absolute;
-            width: auto;
-            height: auto;
-            left: 60px;
-            top: 70px;
-            right: 60px;
-            bottom: 10px;
-            margin: 0;
-            padding: 0;
-            border: 1px solid black;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            background: #333;
-        }
-        #miniholder {
-            position: absolute;
-            width: 200px;
-            height: 100px;
-            right: 80px;
-            bottom: 30px;
-            margin: 0;
-            padding: 0;
-            background: rgba(32,32,32,.5);
-        }
-        #icons-generic {
-            position: absolute;
-            width: 40px;
-            height: auto;
-            left: 10px;
-            top: 70px;
-            bottom: 10px;
-            margin: 0;
-            padding: 0;
-        }
-        #icons-specific {
-            position: absolute;
-            width: 40px;
-            height: auto;
-            right: 10px;
-            top: 70px;
-            bottom: 10px;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-</head>
-<body>
-    <div id="holder"></div>
-    <div id="miniholder"></div>
-    <div id="icons-generic"></div>
-    <div id="icons-specific"></div>
-</body>
-<script type="text/javascript" src="assets/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="assets/jquery.mousewheel.js"></script>
-<script type="text/javascript" src="assets/icons.js"></script>
-<script type="text/javascript" src="assets/raphael.js"></script>
-<script type="text/javascript" src="assets/graffle.js"></script>
-<script type="text/javascript">
 (function(){
     var el;
-    var scale=1;
     var dragger = function () {
         this.ox = this.type == "rect" ? this.attr("x") : this.attr("cx");
         this.oy = this.type == "rect" ? this.attr("y") : this.attr("cy");
@@ -86,14 +15,8 @@
     },
     up = function () {
         this.animate({"fill-opacity": 0}, 500);
-    };
-    // r = Raphael("holder", "100%", "100%"),
-    $('#miniholder').css({
-        width:$('#holder').width()*0.17,
-        height:$('#holder').height()*0.17
-    });
-    var r = Raphael("holder", "100%", "100%"),
-    r2 = Raphael("miniholder", "100%", "100%"),
+    },
+    r = Raphael("holder", "100%", "100%"),
     icons_g = Raphael("icons-generic", "100%", "100%"),
     icons_s = Raphael("icons-specific", "100%", "100%"),
     connections = [],
@@ -184,26 +107,6 @@
                 element.hover( icon_mouseover, icon_mouseout ).attr({cursor:'pointer',title:index1});
             })
         });
-    });
-
-    // Bind Mousewheel Action to miniholder
-    // $('#miniholder').bind('mousewheel', function(event, delta, deltaX, deltaY) {
-    //    console.log(delta, deltaX, deltaY);
-    //});
-
-    $(window).mouseup(function(){
-        $("#miniholder").html($('#holder').html());
-        r2 = Raphael("miniholder", "100%", "100%");
-        r2.setViewBox(0,0,$("#miniholder").width(),$("#miniholder").height(),true);
-    });
-
-    $(window).keydown(function(e){
-        if ( e.ctrlKey || e.metaKey ) {
-            console.log("CTRL/META detected ftw!");
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        }
     })
 
     $(window).resize(
@@ -223,13 +126,7 @@
             holder_icons['Move Right'][1].attr( {transform: ['t',holder_w-37,holder_h/2-20]} );
             holder_icons['Move Left'][0].attr( {transform: ['t',5,holder_h/2-20]} );
             holder_icons['Move Left'][1].attr( {transform: ['t',5,holder_h/2-20]} );
-            $('#miniholder').css({
-                width:holder_w*0.17,
-                height:holder_h*0.17
-            });
             r.safari();
         }
     )
 })();
-</script>
-</html>
