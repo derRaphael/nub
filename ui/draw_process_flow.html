@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Playground</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="holder"></div>
+        <div id="icons-generic"></div>
+        <div id="icons-specific"></div>
+
+<script src="assets/js/vendor/jquery-1.9.1.min.js"></script>
+<script src="assets/js/vendor/jquery.mousewheel.js"></script>
+<script src="assets/js/vendor/consolefix.js"></script>
+<script src="assets/js/vendor/raphael.js"></script>
+<script src="assets/js/raphael/icons.js"></script>
+<script src="assets/js/raphael/connection.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+
+(function(){
+
+
+})();
+
+$(document).ready(function(){
+
+    var oa = r.outlineArrow(200,100,200,150,6,"end","full",{stroke:'#789',fill:'#798',"stroke-width": 3, "outline-color": "#00f", "cursor": 'pointer'});
+
+    var f_out = function () {
+        this.animate({"stroke":$(this.node).data('attr')}, 150);
+    },
+    f_in = function () {
+        $(this.node).data('attr',this.attr('stroke'));
+        this.animate({"stroke": "#fff"}, 150);
+    };
+
+    // oa['line'].hover( over, out );
+    oa['fg'].hover( f_in, f_out );
+
+    console.log( oa );
+
+});
+
+</script>
+
+    </body>
+</html>
