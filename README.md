@@ -10,6 +10,8 @@ Testing:
 
 Just testing the UI mockup, have a peek at http://jsfiddle.net/JprP4/embedded/result/
 
+For some reasons, the jsfiddle is currently not working properly. A fix is coming.
+
 For the wicked:
 
 To run the browser, you'll need pywebkitgtk (in ubuntu speak that's python-ubuntu), and fire up the php build in webserver.
